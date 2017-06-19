@@ -25,8 +25,6 @@
     self.datasArray = @[].mutableCopy;
     [self.datasArray addObject:@"system default style"];
     [self.datasArray addObject:@"system only title"];
-    [self.datasArray addObject:@"system only cancel"];
-    [self.datasArray addObject:@"system only ok"];
     
     [self.datasArray addObject:@"only title"];
     [self.datasArray addObject:@"only message"];
@@ -72,24 +70,8 @@
             [self presentViewController:ac animated:YES completion:nil];
             break;
         }
+            
         case 2:{
-            UIAlertController *ac = [UIAlertController mk_alertWithTitle:@"title" message:@"message" cancelTitle:@"取消" confirmTitle:nil preferredStyle:UIAlertControllerStyleAlert block:^(NSInteger buttonIndex) {
-                NSLog(@"button index : %zd", buttonIndex);
-            }];
-            [self presentViewController:ac animated:YES completion:nil];
-            break;
-        }
-            break;
-        case 3:{
-            UIAlertController *ac = [UIAlertController mk_alertWithTitle:@"title" message:@"message" cancelTitle:nil confirmTitle:@"确定" preferredStyle:UIAlertControllerStyleAlert block:^(NSInteger buttonIndex) {
-                NSLog(@"button index : %zd", buttonIndex);
-            }];
-            [self presentViewController:ac animated:YES completion:nil];
-            break;
-        }
-            
-            
-        case 4:{
             
             MKAlertCtrlConfig *config = [[MKAlertCtrlConfig alloc] init];
             config.titleFont = [UIFont systemFontOfSize:24];
@@ -101,7 +83,7 @@
             [self presentViewController:ac animated:YES completion:nil];
             break;
         }
-        case 5:{
+        case 3:{
             MKAlertCtrlConfig *config = [[MKAlertCtrlConfig alloc] init];
             config.messageFont = [UIFont systemFontOfSize:14];
             config.messageColor = [UIColor orangeColor];
@@ -112,7 +94,7 @@
             [self presentViewController:ac animated:YES completion:nil];
             break;
         }
-        case 6:{
+        case 4:{
             MKAlertCtrlConfig *config = [[MKAlertCtrlConfig alloc] init];
             config.titleFont = [UIFont systemFontOfSize:30];
             config.titleColor = [UIColor greenColor];
@@ -129,7 +111,7 @@
             [self presentViewController:ac animated:YES completion:nil];
             break;
         }
-        case 7:{
+        case 5:{
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"title" message:@"message:\n1.xxxxxxx\n2.yyyyyyy\n3.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"action0" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 NSLog(@"0");
@@ -168,7 +150,7 @@
             [self presentViewController:alertController animated:YES completion:nil];
             break;
         }
-        case 8:{
+        case 6:{
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"title" message:@"message:\n1.xxxxxxx\n2.yyyyyyy\n3.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" preferredStyle:UIAlertControllerStyleActionSheet];
             [alertController addAction:[UIAlertAction actionWithTitle:@"action0" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 NSLog(@"0");
