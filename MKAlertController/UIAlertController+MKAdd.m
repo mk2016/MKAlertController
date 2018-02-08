@@ -191,7 +191,8 @@
             }
         }
     }
-    
+    free(property);
+
     //action
     Ivar *ivars = class_copyIvarList([UIAlertAction class], &count);
     for (int i = 0; i < self.actions.count; i++) {
@@ -212,6 +213,7 @@
             }
         }
     }
+    free(ivars);
 }
 
 @end
